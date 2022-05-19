@@ -1,0 +1,80 @@
+<section class="content" class="contenido">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Reporte de Registros por dia</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <div >
+                <button class="btn btn-success " (click)="downloadPDF()">Descargar Reporte</button>
+              </div>
+              <div></div>
+              <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4" id="htmlData">
+                <div class="row" class="col-sm-12">
+                        
+                    <div style="text-align: right;" >
+                        <img src="https://i.ibb.co/wg73zgf/Lord-Byron-School-logo-2020-horizontal1.png" alt="" style="width: 200px; height: 100px">
+                    </div>
+                    <div style="margin-top:-60px"> 
+                        <h5  class="mb-2 mt-4">Reporte de Registros por dia</h5>
+                    </div>
+                    
+                    
+                   
+                </div>
+                
+                <div class="row">
+                 
+                  <div class="col-sm-12 col-md-6" style="padding-top: 10px;">
+                    <input type="date" name="" id="date" value={{fullday}}  (change)='getRegisters()' > 
+                     </div>
+                     
+                     <div class="col-sm-12 col-md-6">
+                    
+                       
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable dtr-inline collapsed" role="grid" aria-describedby="example1_info">
+                <thead>
+                <tr role="row">
+                  <th tabindex="0"  rowspan="1" colspan="1"  >Conductor</th>
+                  <th tabindex="0"  rowspan="1" colspan="1"  >Placa</th>
+                  <th  tabindex="0"  rowspan="1" colspan="1" >Ingreso</th>
+                  <th  tabindex="0"  rowspan="1" colspan="1" >Observacion</th>
+                  <th  tabindex="0"  rowspan="1" colspan="1" >Salida</th>
+                  <th  tabindex="0"  rowspan="1" colspan="1" >Observacion</th>
+                  
+                  </thead>
+                <tbody>       
+                
+                
+                <tr class="odd" *ngFor="let register of registers | filterregister:filtername">
+                  <td>{{register.person.name}} {{register.person.lastname}}</td>
+                  <td>{{register.registrationplate}} </td>
+                  <td style="font-weight: bold; color: rgb(20, 168, 52);">{{register.checkin}}</td>
+                  <td >{{register.obs_checkin}}</td>
+                  <td style="font-weight: bold; color: rgb(190, 52, 17);">{{register.checkout}}</td>
+                  <td >{{register.obs_checkout}}</td> 
+                  
+                 
+                </tr>
+                  </tbody>
+               
+              </table></div></div>
+            </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </section>

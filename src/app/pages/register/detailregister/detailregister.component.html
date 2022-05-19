@@ -1,0 +1,112 @@
+<div class="card">
+    <div class="card-header">
+        <h6>Detalle</h6>
+      </div>
+              <!-- Header -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0"  class="fullTable" bgcolor="#F4F6F9" >
+        
+        <tr>
+          <td>
+            <table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="fullTable" bgcolor="#ffffff">
+             
+  
+              <tr>
+                <td>
+                  <table width="480" border="0" cellpadding="0" cellspacing="0" align="center" class="fullPadding">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <table width="220" border="0" cellpadding="0" cellspacing="0" align="left" class="col">
+                            <tbody>
+                              <tr>
+                                  <td height="1" style="background: #bebebe;" colspan="4"></td>
+                                </tr>
+                               <tr>
+                                <td style="font-size: 12px; color: #5b5b5b; font-family: 'Open Sans', sans-serif; line-height: 18px; vertical-align: top; text-align: left;">
+                                  Detalle del conductor 
+                                </td>
+                              </tr>
+                              <tr>
+                                  <td height="1" style="background: #bebebe;" colspan="4"></td>
+                                </tr>
+                                <tr>
+                                  <td style="font-size: 12px; color: #5b5b5b; font-family: 'Open Sans', sans-serif; line-height: 18px; vertical-align: top; text-align: left;">
+                                      <br><strong>NOMBRE Y APELLIDOS:</strong> {{register.person.name}} {{register.person.lastname}} <br>
+                                    <strong>DNI:</strong> {{register.person.dni}} <br>
+                                    <strong>CARGO:</strong> {{register.person.type}} <br>
+                                    <strong>TELEFONO:</strong>  {{register.person.phone}} <br><br>
+                                    
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td height="1" style="background: #bebebe;" colspan="4"></td>
+                                </tr>
+                               <tr>
+                                <td style="font-size: 12px; color: #5b5b5b; font-family: 'Open Sans', sans-serif; line-height: 18px; vertical-align: top; text-align: left;">
+                                  Detalle del vehiculo
+                                </td>
+                              </tr>
+                              <tr>
+                                  <td height="1" style="background: #bebebe;" colspan="4"></td>
+                                </tr>
+                                <tr>
+                                  <td style="font-size: 12px; color: #5b5b5b; font-family: 'Open Sans', sans-serif; line-height: 18px; vertical-align: top; text-align: left;">
+                                      <br> <strong>PLACA:</strong>   {{car.registrationplate}} <br>
+                                      <strong>MARCA:</strong> {{car.carbrand}}  <br>
+                                      <strong>MODELO:</strong> {{car.carmodel}} <br>
+                                   <strong>COLOR:</strong>  {{car.carcolor}} <br><br>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td height="1" style="background: #bebebe;" colspan="4"></td>
+                                </tr>
+                               <tr>
+                                <td style="font-size: 12px; color: #5b5b5b; font-family: 'Open Sans', sans-serif; line-height: 18px; vertical-align: top; text-align: left;">
+                                  Detalle del registro
+                                </td>
+                              </tr>
+                              <tr>
+                                  <td height="1" style="background: #bebebe;" colspan="4"></td>
+                                </tr>
+                                <tr>
+                                  <td style="font-size: 12px; color: #5b5b5b; font-family: 'Open Sans', sans-serif; line-height: 18px; vertical-align: top; text-align: left;">
+                                      <br> <strong>DIA:</strong>   {{register.day}} <br>
+                                      <strong>HORA DE INGRESO:</strong> {{register.checkin}}  <br>
+                                      <strong>REGISTRADO POR:</strong> {{register.user_checkin}} <br>
+                                   <strong>OBSERVACIÓN DE INGRESO:</strong>  {{register.obs_checkin}} <br>
+                                   <strong>HORA DE SALIDA:</strong> {{register.checkout}} <br>
+                                   <strong>REGISTRADO POR:</strong> {{register.user_checkout}} <br>
+                                <strong>OBSERVACIÓN DE SALIDA:</strong>  {{register.obs_checkout}} <br><br>
+                                  </td>
+                                </tr>
+                               
+                                 <tr>
+                                  <td>
+                                    <div style="text-align:center;">
+                                        <button style="background-color:#218838; color: white; margin: 10px;" class="btn" routerLink="/dashboard/register">Volver</button>
+                                      </div>
+                                  </td>
+                                </tr>
+                                
+                                
+                            </tbody>
+                          </table>
+                          
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- /Header -->
+    
+           
+          
+        </div>
+
+      
+

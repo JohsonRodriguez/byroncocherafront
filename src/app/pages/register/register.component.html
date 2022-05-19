@@ -1,0 +1,76 @@
+<section class="content" class="contenido">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Lista de Registros</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <div style="text-align:end;">
+                <button style="background-color:#218838; color: white; margin: 10px;" class="btn" routerLink="/dashboard/newregister">Nuevo Registro</button>
+              </div>
+              <div></div>
+              <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                
+                <div class="row">
+                 
+                  <div class="col-sm-12 col-md-6">
+                    <input type="date" name="" id="date" value={{fullday}}  (change)='getRegisters()' > 
+                     </div>
+                     
+                     <div class="col-sm-12 col-md-6">
+                    
+                       <div id="example1_filter" class="dataTables_filter">
+                    <label>Search:<input type="search" class="form-control form-control-sm" placeholder=""  [(ngModel)]="filtername" name="filtername"></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable dtr-inline collapsed" role="grid" aria-describedby="example1_info">
+                <thead>
+                <tr role="row">
+                  <th tabindex="0"  rowspan="1" colspan="1"  >Conductor</th>
+                  <th tabindex="0"  rowspan="1" colspan="1"  >Placa</th>
+                  <th  tabindex="0"  rowspan="1" colspan="1" >Ingreso</th>
+                  <th  tabindex="0"  rowspan="1" colspan="1" >Observacion</th>
+                  <th  tabindex="0"  rowspan="1" colspan="1" >Salida</th>
+                  <th  tabindex="0"  rowspan="1" colspan="1" >Observacion</th>
+                  <th  tabindex="0"  rowspan="1" colspan="1" >Ver detalle</th>
+                  </thead>
+                <tbody>       
+                
+                
+                <tr class="odd" *ngFor="let register of registers | filterregister:filtername">
+                  <td>{{register.person.name}} {{register.person.lastname}}</td>
+                  <td>{{register.registrationplate}} </td>
+                  <td style="font-weight: bold; color: rgb(20, 168, 52);">{{register.checkin}}</td>
+                  <td >{{register.obs_checkin}}</td>
+                  <td style="font-weight: bold; color: rgb(190, 52, 17);">{{register.checkout}}</td>
+                  <td >{{register.obs_checkout}}</td> 
+                  <td >
+                    <a routerLink="/dashboard/verregister/{{register.id}}"title="Ver detalle de registro" style="padding-right: 20px; color:blueviolet; font-size: 15px;"><i class="fas fa-eye"></i></a>
+                    
+                  </td>
+                 
+                </tr>
+                  </tbody>
+               
+              </table>
+            </div>
+          </div>
+       
+          </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </section>

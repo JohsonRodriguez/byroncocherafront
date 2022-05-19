@@ -1,0 +1,44 @@
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Edit Persona</h3>
+      </div>
+      </div>
+    <div class="container">
+                 <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <div class="row mb-2"> 
+                
+                <div class="col-sm-12 col-md-4 mx-auto">       
+                    <div class="form-group">
+                        <label for="name">Nombre del usuario</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre"
+                        [(ngModel)]="users.nombre"  required >
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Usuario</label>
+                        <input type="text" class="form-control" id="username" name="username" style="text-transform:uppercase"
+                        [(ngModel)]="users.nombreUsuario" required >
+                        
+                    </div>
+                    <!-- <div class="form-group" *ngFor="let datos of users.roles">
+                        <label for="lastname">Rol</label>
+                        <select class="form-control" id="rol" name="rol" value="datos.name" [(ngModel)]="datos.name" required>
+                          <option value=ROLE_ADMIN>ADMINISTRADOR</option> 
+                          <option value=ROLE_USER>VIGILANTE</option> 
+                       </select>
+                       
+                    </div> -->
+                    
+                    
+            
+                  </div>
+                 
+            </div>
+            <div class="col-sm-12 col-md-4 mx-auto">
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Actualizar</button>
+            </div>
+            
+        </form>
+    
+    </div>
+    
+    

@@ -1,0 +1,67 @@
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Edit Persona</h3>
+      </div>
+      </div>
+    <div class="container">
+                 <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <div class="row mb-2"> 
+                
+                <div class="col-sm-12 col-md-4 mx-auto">       
+                    <div class="form-group">
+                        <label for="dni">DNI</label>
+                        <input type="text" class="form-control" id="dni" name="dni"
+                        [(ngModel)]="person.dni"  disabled >
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombres</label>
+                        <input type="text" class="form-control" id="name" name="name" style="text-transform:uppercase"
+                        [(ngModel)]="person.name" required >
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Apellidos</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" style="text-transform:uppercase"
+                        [(ngModel)]="person.lastname" required >
+                    </div>
+                    <div class="form-group">
+                        <label for="registrationplate">Telefono</label>
+                        <input type="text" class="form-control" id="phone" name="phone" style="text-transform:uppercase"
+                        [(ngModel)]="person.phone" required >
+                    </div>
+            
+                  </div>
+                  <div class="col-sm-12 col-md-4 mx-auto">  
+            
+                     <div class="form-group">
+                        <label for="carbrand">Cargo</label>
+                        <select class="form-control" id="type" name="type" value="person.type" [(ngModel)]="person.type" required>
+                        <option value="Administrativo">Administrativo</option> 
+                        <option value="Directivo">Directivo</option> 
+                        <option value="Directivo">Docente</option>
+                        <option value="Padre">Padre</option> 
+                        <option value="Proveedor">Proveedor</option> 
+                        <option value="Otros">Otros</option> 
+                     </select>
+                        
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="carmodel">Estado</label>
+                        <select class="form-control" id="state" name="state" value="person.state" [(ngModel)]="person.state" required>
+                            <option value="ACTIVO">ACTIVO</option> 
+                            <option value="DESACTIVO">DESACTIVO</option> 
+                           
+                         </select>
+                        
+                    </div> -->
+                         
+                 </div>
+            </div>
+            <div class="col-sm-12 col-md-4 mx-auto">
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Actualizar</button>
+            </div>
+            
+        </form>
+    
+    </div>
+    
+    

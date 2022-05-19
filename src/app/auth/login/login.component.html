@@ -1,0 +1,27 @@
+<body>
+    
+
+  <form id="login-form"  (ngSubmit)="login()"   novalidate #f="ngForm">
+
+    <div>
+            <img src="https://i.ibb.co/68Zfw5b/logo2.png" class="logo" >
+    </div>
+
+    <h1>Bienvenido</h1>
+
+    <div class="input email">
+        <input type="text" value=""  [(ngModel)]="nombreUsuario" name="nombreUsuario"  placeholder=" "  required>
+        <label>Usuario</label>
+    </div>
+    <div class="input email">
+      <input type="password" value=""  [(ngModel)]="password" name="password"  placeholder=" "  required>
+      <label>Contraseña</label> 
+  </div>
+    
+    <button type="submit" [disabled]="!f.valid"  class="btn btn-outline-success btn-block">
+          <span>Ingresar</span>
+    </button>
+ 
+</form>
+
+</body>

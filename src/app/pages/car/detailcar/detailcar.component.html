@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header">
+        <!-- <h3 class="card-title"><strong>Propietario :</strong> {{car.person.name}} {{car.person.lastname}}</h3> -->
+        
+      </div>
+      <div class="card mb-3" >
+        <div class="row no-gutters">
+          
+            <div class="col-sm-12 col-md-4 mx-auto"> 
+            <div class="card-body">
+                <label for="">Placa :</label>
+                <h5>{{car.registrationplate}}</h5>
+                <label for="">Marca :</label>
+                <h5>{{car.carbrand}}</h5>
+                <label for="">Modelo :</label>
+                <h5>{{car.carmodel}}</h5>
+                <label for="">Color :</label>
+                <h5>{{car.carcolor}}</h5>
+              
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-4 mx-auto"> 
+            <img style="width: 300px; height:300px ;" src='{{qr}}{{car.registrationplate}}'>
+          </div>
+        </div>
+      </div>
+      </div>

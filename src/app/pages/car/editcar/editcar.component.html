@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Editar Car</h3>
+      </div>
+    
+   
+      </div>
+    <div class="container">
+                 <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <div class="row mb-2"> 
+                
+                <div class="col-sm-12 col-md-4 mx-auto">       
+                    <div class="form-group">
+                        <label for="dni">PLACA</label>
+                        <input type="text" class="form-control" id="dni" name="dni"
+                        [(ngModel)]="car.registrationplate"  disabled >
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">MARCA</label>
+                        <input type="text" class="form-control" id="name" name="name" style="text-transform:uppercase"
+                        [(ngModel)]="car.carbrand" required >
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">MODELO</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" style="text-transform:uppercase"
+                        [(ngModel)]="car.carmodel" required >
+                    </div>
+                    <div class="form-group">
+                        <label for="registrationplate">COLOR</label>
+                        <input type="text" class="form-control" id="phone" name="phone" style="text-transform:uppercase"
+                        [(ngModel)]="car.carcolor" required >
+                    </div>
+            
+                  </div>
+               
+            </div>
+            <div class="col-sm-12 col-md-4 mx-auto">
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Actualizar</button>
+            </div>
+            
+        </form>
+    
+    </div>
+    
+    

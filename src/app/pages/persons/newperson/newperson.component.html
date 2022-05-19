@@ -1,0 +1,81 @@
+<div class="card">
+<div class="card-header">
+    <h3 class="card-title">Nueva Persona</h3>
+  </div>
+  </div>
+<div class="container">
+             <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+        <div class="row mb-2"> 
+            
+            <div class="col-sm-12 col-md-4 mx-auto">       
+                <div class="form-group">
+                    <label for="dni">DNI/CE/PASAPORTE</label>
+                    <input type="text" class="form-control" id="dni" name="dni"
+                    [(ngModel)]="dni" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombres</label>
+                    <input type="text" class="form-control" id="name" name="name"
+                    [(ngModel)]="name"pattern="[a-zA-Z ]*"  required >
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Apellidos</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname"
+                    [(ngModel)]="lastname" required>
+                </div>
+                <div class="form-group">
+                    <label for="registrationplate">Teléfono</label>
+                    <input type="number" class="form-control" id="phone" name="phone"
+                    [(ngModel)]="phone" required>
+                </div>
+        
+              </div>
+              <div class="col-sm-12 col-md-4 mx-auto">  
+        
+                 <div class="form-group">
+                    <label for="carbrand">Cargo</label>
+                    <select class="form-control" id="type" name="type" [(ngModel)]="type" required>
+                        <option value="Administrativo">Administrativo</option> 
+                        <option value="Directivo">Directivo</option> 
+                        <option value="Directivo">Docente</option>
+                        <option value="Padre">Padre</option> 
+                        <option value="Proveedor">Proveedor</option> 
+                        <option value="Otros">Otros</option> 
+                     </select>
+                    <!-- <input type="text" class="form-control" id="type" name="type"
+                    [(ngModel)]="type" required> -->
+                </div>
+                
+             
+                <!-- <div class="form-group">
+                    <label for="registrationplate">Ingrese Vehiculo 3</label>
+                        
+                    <div class="ng-autocomplete" style="width: auto;" [(ngModel)]="registrationplate3" required>
+                        <ng-autocomplete
+                        [data]="data$|async"
+                        [searchKeyword]="keyword"
+                        placeholder="Ingrese la placa"
+                        [itemTemplate]="itemTemplate"
+                        (selected)='selectEvent3($event)'
+                        [notFoundTemplate]="notFoundTemplate">
+                        </ng-autocomplete> 
+                        <ng-template #itemTemplate let-item>
+                          <a [innerHTML]="item.registrationplate"></a>
+                        </ng-template>
+                        <ng-template #notFoundTemplate let-notFound>
+                          <div [innerHTML]="notFound"></div>
+                        </ng-template>
+                      </div>
+                </div> -->
+                
+                        
+             </div>
+        </div>
+        <div class="col-sm-12 col-md-4 mx-auto">
+            <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Enviar</button>
+        </div>
+        
+    </form>
+
+</div>
+

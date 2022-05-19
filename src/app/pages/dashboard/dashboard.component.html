@@ -1,0 +1,96 @@
+<section class="content">
+<!-- Default box -->
+ <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Dashboard</h3>
+
+      <div class="card-tools">
+        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+          <i class="fas fa-minus"></i>
+        </button>
+        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    <div class="card-body">
+      
+         <!-- Small Box (Stat card) -->
+        <h5 class="mb-2 mt-4">Bienvenido</h5>
+        <div class="row">
+          <div class="col-lg-4 col-6">
+            <!-- small card -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>{{totalcar}}</h3>
+
+                <p>Vehiculos Registrados</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-car"></i>
+              </div>
+              <a routerLink="/dashboard/cars" class="small-box-footer">
+                Ver mas <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-4 col-6">
+            <!-- small card -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>{{total}}</h3>
+
+                <p>Personas Registradas</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <a routerLink="/dashboard/persons" class="small-box-footer">
+               Ver mas <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-4 col-6">
+            <!-- small card -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>{{totalregister}}</h3>
+
+                <p>Total de Registros</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <a routerLink="/dashboard/register" class="small-box-footer">
+                Ver mas <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-6">
+            <!-- small card -->
+            
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>{{totalparking}}</h3>
+
+                <p>Estacionamientos Libres</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-parking"></i>
+              </div>
+             
+            </div>
+          </div>
+         
+        </div>
+        <!-- /.row -->
+    
+    </div>
+  
+  </div>
+  <!-- /.card -->
+
+
+</section>

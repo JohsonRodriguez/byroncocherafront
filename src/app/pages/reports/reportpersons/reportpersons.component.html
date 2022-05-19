@@ -1,0 +1,71 @@
+<section class="content" class="contenido">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Lista de Personas</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                <div class="row">
+                     <div class="col-sm-12 col-md-6">
+                        <button class="btn btn-success " (click)="downloadPDF()">Descargar Reporte</button>
+                     </div>
+                </div>
+                <div class="row" id="htmlData">
+                    <div class="row" class="col-sm-12">
+                        
+                        <div style="text-align: right;" >
+                            <img src="https://i.ibb.co/wg73zgf/Lord-Byron-School-logo-2020-horizontal1.png" alt="" style="width: 200px; height: 100px">
+                        </div>
+                        <div style="margin-top:-60px"> 
+                            <h5  class="mb-2 mt-4">Reporte de personas registradas</h5>
+                        </div>
+                        
+                        
+                       
+                    </div>
+                  <div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable dtr-inline collapsed" role="grid" >
+                <thead>
+                <tr role="row">
+                  <th  tabindex="0"  rowspan="1" colspan="1" >DNI/CE/PASAPORTE</th>
+                  <th  tabindex="0"  rowspan="1" colspan="1"  >Datos Personales</th>
+                  <th  tabindex="0"  rowspan="1" colspan="1" >Cargo</th>
+                  <th  tabindex="0" rowspan="1" colspan="1" >Telefono</th>
+                  <th  tabindex="0"  rowspan="1" colspan="1" >Estado</th>
+                  
+                </thead>
+                <tbody>       
+                
+                
+                <tr class="odd" *ngFor="let person of persons | filterperson:filtername">
+                  <td >{{person.dni}}</td>
+                  <td>{{person.name}} {{person.lastname}}</td>
+                  <td>{{person.type}}</td>
+                  <td >{{person.phone}}</td>
+                  <td > 
+                    <button class="btn active " [class.redClass]="person.enabled !=true" >{{person.enabled | estado}}</button>
+                  </td>
+                 
+                  
+                </tr>
+                  </tbody>
+               
+              </table>
+            </div>
+          </div>
+         
+        </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </section>

@@ -1,0 +1,82 @@
+<div class="card"  >
+    <div class="card-header">
+        <h3 class="card-title">Nuevo Registro</h3>
+      </div>
+      </div>
+    <div class="container" class="contenido">
+                 <form  novalidate #f="ngForm">
+            <div class="row mb-2"> 
+                <div class="col-sm-12 col-md-4 mx-auto">       
+                    <div class="form-group">
+                        <label for="dni">Ingrese DNI/CE/PASAPORTE conductor</label>
+                        <input type="text" style="text-transform:uppercase;" class="form-control" id="dni" name="dni"
+                        [(ngModel)]="dni" required>
+                        <button class="btn btn-success btn-block" [disabled]="!f.valid" id="checkin"(click)="searchbyDni()" >Buscar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container" *ngIf="this.isButtonVisible">
+              <div class="form-group" class="conductor"  >
+                <label for="" ><span> Nombre del conductor :</span> {{name}} {{lastname}}</label>
+                
+              </div>
+            </div>
+            <div class="container" *ngIf="this.isButtonVisible3">
+              <div class="form-group" class="conductor"  >
+                <label for="" style="color: red;" >
+                  <strong> Conductor Bloqueado no puede ingresar</strong></label>
+                
+              </div>
+            </div>
+            <div class="row" *ngIf="this.isButtonVisible">
+                <!-- ------------------------------------------------ -->
+                <div class="col-md-4 col-lg-4 col-sm-4" *ngFor="let datos of cars">
+                        
+                  <div class="card2" >
+                    
+                    <input [(ngModel)]="data.optcar"  type="radio" name="optcar" id="optcar" value={{datos.registrationplate}} (click)="this.isButtonVisible2 = true">
+                    <label  class="title">
+                        <h6>Placa: {{datos.registrationplate}}</h6>
+                        <h6>
+                          
+                            <span>Marca: </span>
+                            {{datos.carbrand}}
+                            <span>Modelo: </span>
+                            {{datos.carmodel}}<span>
+                              Color: </span>
+                            {{datos.carcolor}}
+                        </h6>
+                    </label>
+                  
+                </div>
+                  
+                </div>
+                <!-- ------------------------------------------------ -->
+                <div class="col-sm-12 col-md-12 mx-auto" *ngIf="this.isButtonVisible2">       
+                  <div class="form-group" style="margin-left: 50px;">
+                      <label for="observ">Ingrese observación</label>
+                      <textarea type="text"  class="form-control caja" id="observ" name="observ"
+                      [(ngModel)]="observ" ></textarea>
+                      
+                  </div>
+              </div>
+              </div>
+             
+  <!-- /.card-body -->
+
+            <div class="col-sm-12 col-md-8 mx-auto" *ngIf="this.isButtonVisible2">
+                <div class="row">
+                  <div class="col-sm-12 col-md-4 mx-auto">
+                    <button class="btn btn-success btn-block" [disabled]="!f.valid" id="checkin"(click)="onCreate()" >Ingreso</button>
+                </div>
+                <div class="col-sm-12 col-md-4 mx-auto">
+                    <button class="btn btn-danger btn-block" [disabled]="!f.valid" id="checkout" (click)="checkOut()">Salida</button>
+                </div>
+            </div>
+        </div>
+           
+        </form>
+    
+    </div>
+
+    

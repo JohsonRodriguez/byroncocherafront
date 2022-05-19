@@ -1,0 +1,90 @@
+<div class="card"  >
+  <div class="card-header">
+      <h3 class="card-title">Asignar Conductor</h3>
+    </div>
+    </div>
+  <div class="container" class="contenido">
+               <form  novalidate #f="ngForm">
+                 
+          <div class="row mb-2"> 
+              <div class="col-lg-3 col-6" style="padding-left: 25px;">      
+                <label for="dni">Ingrese DNI/CE/PASAPORTE conductor</label> 
+                      <input type="text" style="text-transform:uppercase;" class="form-control" id="dni" name="dni"
+                      [(ngModel)]="dni" required>
+                </div>
+              <div class="col-lg-4 col-6" style="align-self: end;">
+               <button class="btn btn-success " [disabled]="!f.valid" (click)="searchbyDni()">Buscar</button>
+           </div>
+          </div>
+          <div class="container" >
+            <div  class="conductor"  >
+              <label for="" *ngIf="this.isButtonVisible"><span> Nombre del conductor :</span> {{name}} {{lastname}}</label>
+              <a *ngIf="this.isButtonVisible"  (click)="this.isButtonVisible3 = true" style="padding-left: 20px; color:blue; font-size: 13px;font-weight: bold; cursor: pointer;"><i class="fas fa-plus"></i> Agregar vehiculo</a>
+            </div>
+          </div>
+         
+                
+             
+           
+          
+          <div class="row mb-2 " *ngIf="this.isButtonVisible3"> 
+            <div class="col-lg-3 col-6" style="padding-left: 25px;">      
+              <label for="registrationplate">Ingrese placa del vehículo</label> 
+                   
+                    <div class="ng-autocomplete" style="width: auto;" [(ngModel)]="registrationplate" required>
+                      <ng-autocomplete
+                      [data]="data$|async"
+                      [searchKeyword]="keyword"
+                      placeholder="Ingrese placa"
+                      [itemTemplate]="itemTemplate"
+                      (selected)='selectEvent($event)'
+                      [notFoundTemplate]="notFoundTemplate">
+                      </ng-autocomplete> 
+                      <ng-template #itemTemplate let-item>
+                        <a [innerHTML]="item.registrationplate"></a>
+                      </ng-template>
+                      <ng-template #notFoundTemplate let-notFound>
+                        <div [innerHTML]="notFound"></div>
+                      </ng-template>
+                    </div>
+              </div>
+            <div class="col-lg-4 col-6" style="align-self: end;">
+             <button class="btn btn-success " [disabled]="!f.valid" (click)="addCartoPerson()">Asignar</button>
+         </div>
+        </div>
+         
+          <div class="row">
+              <!-- ------------------------------------------------ -->
+              <div class="col-lg-4 " *ngFor="let datos of cars" style="margin-bottom:-87px;">
+                      
+                <div class="card2" >
+                  
+                  <input [(ngModel)]="data.optcar"  type="radio" name="optcar" id="optcar" value={{datos.registrationplate}} (click)="this.isButtonVisible2 = true" >
+                  <label  class="title">
+                      <h6>Placa: {{datos.registrationplate}}</h6>
+                  </label>
+                
+              </div>
+                
+              </div>
+              <!-- ------------------------------------------------ -->
+            
+            </div>
+           
+<!-- /.card-body -->
+
+
+              
+            <div class="row" *ngIf="this.isButtonVisible2">
+            <div class="col-lg-4 col-6" >
+              <a  (click)="removeCartoPerson()" style="padding-left: 20px; color:red; font-size: 13px;font-weight: bold; cursor: pointer;"><i class="fas fa-times"></i> Quitar vehiculo seleccionado</a>
+        </div></div>
+        
+      
+    
+         
+      </form>
+  
+  </div>
+
+  

@@ -1,0 +1,64 @@
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar elevation-4" style="background-color: #104B39; " >
+    <!-- Brand Logo -->
+    <a  class="brand-link">
+      <img src="https://i.ibb.co/T4Btp5D/logo.png"   style="width: 160px; height: 70px; " >
+      
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="https://i.ibb.co/ckz5Ybt/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block" style="color: white;">{{username}}</a>
+        </div>
+      </div>
+
+         <!-- Sidebar Menu -->
+      <nav class="mt-2" >
+        <ul  *ngFor="let item of menuItems" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+              <li class="nav-item"  *ngFor="let subMenuItem of item.submenu"  >
+                <a [routerLink]="subMenuItem.url" class="nav-link" style="cursor: pointer;" *ngIf="currentUser == 'ROLE_ADMIN' || currentUser == subMenuItem.user ">
+                    <i class="{{subMenuItem.icono}}" style="color: white;"></i>
+                  <p style="color: white;">{{subMenuItem.titulo}}</p>
+                </a>
+              </li>
+                     
+             <!-- FInal de Menu -->
+             <li class="nav-item has-treeview" id="drop" *ngFor="let item of menuItemsx" >
+              
+              <a class="nav-link " style="cursor: pointer;">
+                <i class="{{item.icono}}" style="color: white; padding-left: 5px; font-size: 20px;"></i>
+                <p class="ml-2" style="color: white;">
+                  {{item.titulo}}
+                  
+                  <i class="right fas fa-angle-left" id="flecha"></i>
+                </p>
+              </a>
+              <ul class="nav " id="subdrop">
+                <li class="nav-item" *ngFor="let subMenuItem of item.submenux">
+                  <a [routerLink]="subMenuItem.url" class="nav-link" style="cursor: pointer;">
+                    
+                    <p class="ml-2 smenu" style="padding-left: 25px;">{{subMenuItem.titulo}}</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+              <li class="nav-item">
+                <a (click)="logout()" class="nav-link" style="cursor: pointer;">
+                    <i class="fas fa-sign-out-alt nav-icon" style="color: white;"></i>
+                  <p style="color: white;">Cerrar Sesión</p>
+                </a>
+              </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
